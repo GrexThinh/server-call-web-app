@@ -210,6 +210,7 @@ function getRoomFromLink(link: string): Room | undefined {
   return id !== undefined ? roomsCache.get(id) : undefined;
 }
 
-httpServer.listen(5000, () => {
-  console.log("listening on port", 5000);
+const PORT = 5000;
+httpServer.listen(PORT, "0.0.0.0", () => {
+  console.log("listening on port", PORT);
 });
