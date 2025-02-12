@@ -2,6 +2,7 @@ import { createServer } from "http";
 import { Server, Socket } from "socket.io";
 import { nanoid } from "nanoid";
 import NodeCache from "node-cache";
+const port = Number(process.env.PORT) || 5000;
 
 const IO_OPTIONS = {
   cors: {
@@ -210,7 +211,6 @@ function getRoomFromLink(link: string): Room | undefined {
   return id !== undefined ? roomsCache.get(id) : undefined;
 }
 
-httpServer.listen(5000, "0.0.0.0", () => {
-  console.log("listening on port", 5000);
+httpServer.listen(port, "0.0.0.0", () => {
+  console.log("listening on port", port);
 });
-
